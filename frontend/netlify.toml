@@ -1,0 +1,18 @@
+[build]
+  base = "frontend"
+  publish = "build"
+  command = "yarn netlify"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://learn-wikiai.preview.emergentagent.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  REACT_APP_BACKEND_URL = "https://learn-wikiai.preview.emergentagent.com"
